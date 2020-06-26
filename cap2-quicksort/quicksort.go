@@ -38,6 +38,11 @@ func quicksort( numeros []int  ) []int {
 	pivo		:= n[indicePivo]
 
 	n			 = append(n[:indicePivo], n[indicePivo + 1] ... )
+
+
+	menores, maiores := particionar( n, pivo )
+
+	return append( append( quicksort( menores ), pivo ), quicksort( maiores ) ... )
 }
 
 
